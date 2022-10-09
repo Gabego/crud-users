@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import FormUsers from './components/FormUsers'
 import UserCard from './components/UserCard'
+import DeleteUser from './components/DeleteUser'
 
 const baseURL = 'https://users-crud1.herokuapp.com'
 
@@ -77,6 +78,9 @@ function App() {
       <div className='App__container-title'>
         <h1 className='App__title'>Users CRUD</h1>
         <button onClick={handleOpenForm} className='App__btn'>Create New User</button>
+      </div>
+      <div className='delete__container'>
+        <DeleteUser />
       </div>
 
       <div className={`form__container ${formIsClose && 'form__disable'}`}>

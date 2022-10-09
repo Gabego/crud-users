@@ -42,7 +42,7 @@ const handlCloseForm = () => {
 
     return (
         <form className='form' onSubmit={handleSubmit(submit)}>
-            <i onClick={handlCloseForm} class=" form__x fa-solid fa-xmark"></i>
+            <i onClick={handlCloseForm} className=" form__x fa-solid fa-xmark"></i>
             <h2 className='form__title'>{updateInfo ? 'Edit User' : 'New User'}</h2>
             <div className='form__div'>
                 <label className='form__label' htmlFor="email">Email</label>
