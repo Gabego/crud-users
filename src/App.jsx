@@ -19,6 +19,8 @@ function App() {
   const [formIsClose, setFormIsClose] = useState(true)
   //Eliminar desde la ventana Modal
   const [deleteUser, setDeleteUser] = useState(true)
+  //Traer toda la información del boton eliminar
+  const [deleteTodo, setDeleteTodo] = useState()
 
   // Este para hacer el GET de todos los Users
   const getAllUsers = () => {
@@ -82,12 +84,13 @@ function App() {
         <button onClick={handleOpenForm} className='App__btn'>Create New User</button>
       </div>
       <div className={`delete__container ${deleteUser && 'delete__disable'}`}>
-        <DeleteUser 
+        <DeleteUser
+          deleteTodo={deleteTodo}
           users={users}
           setFormIsClose={setFormIsClose}
           deleteUserById={deleteUserById}
           setDeleteUser={setDeleteUser}
-          deleteUser={deleteUser}
+          setDeleteTodo={setDeleteTodo}
         />
       </div>
 
@@ -106,10 +109,10 @@ function App() {
             <UserCard
               key={user.id}
               user={user}
-              deleteUserById={deleteUserById}
               setUpdateInfo={setUpdateInfo}
               setFormIsClose={setFormIsClose}
               setDeleteUser={setDeleteUser}
+              setDeleteTodo={setDeleteTodo}
             />
           ))
         }

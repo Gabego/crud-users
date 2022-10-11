@@ -30,7 +30,6 @@ const FormUsers = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, s
         } else {
             //create
             createNewUser(data)
-
         }
         reset(defaultValues)
         setFormIsClose(true)
@@ -38,6 +37,8 @@ const FormUsers = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, s
 
 const handlCloseForm = () => {
     setFormIsClose(true)
+    setUpdateInfo()
+    reset(defaultValues)
 }
 
     return (
@@ -46,23 +47,23 @@ const handlCloseForm = () => {
             <h2 className='form__title'>{updateInfo ? 'Edit User' : 'New User'}</h2>
             <div className='form__div'>
                 <label className='form__label' htmlFor="email">Email</label>
-                <input className='form__input' placeholder='Enter your Email' type="email" id='email' {...register("email")} />
+                <input className='form__input' placeholder='Enter your Email' type="email" id='email' {...register("email")} required="email"/>
             </div>
             <div className='form__div'>
                 <label className='form__label' htmlFor="password">Password</label>
-                <input className='form__input' placeholder='Enter your Password' type="password" id="password" {...register("password")} />
+                <input className='form__input' placeholder='Enter your Password' type="password" id="password" {...register("password")} required="password" />
             </div>
             <div className='form__div'>
                 <label className='form__label' htmlFor="first_name">First Name</label>
-                <input className='form__input' placeholder='Enter your First Name' type="text" id="first_name" {...register("first_name")} />
+                <input className='form__input' placeholder='Enter your First Name' type="text" id="first_name" {...register("first_name")} required="required" />
             </div>
             <div className='form__div'>
                 <label className='form__label' htmlFor="last_name">Last Name</label>
-                <input className='form__input' placeholder='Enter your Last Name'type="text" id="last_name" {...register("last_name")} />
+                <input className='form__input' placeholder='Enter your Last Name'type="text" id="last_name" {...register("last_name")} required="required"/>
             </div>
             <div className='form__div'>
                 <label className='form__label' htmlFor="birthday">BirthDay</label>
-                <input className='form__input' type="date" id="birthday" {...register("birthday")} />
+                <input className='form__input' type="date" id="birthday" {...register("birthday")} required="date" />
             </div>
             <button className='form__btn'>{updateInfo ? 'Update' : 'Create'}</button>
         </form>

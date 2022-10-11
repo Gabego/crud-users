@@ -1,14 +1,14 @@
 import React from 'react'
 import './styles/UserCard.css'
 
-const UserCard = ({ user, deleteUserById, setUpdateInfo, setFormIsClose, setDeleteUser }) => {
+const UserCard = ({ user, setUpdateInfo, setFormIsClose, setDeleteUser, setDeleteTodo }) => {
   const handleEdit = () => {
     setUpdateInfo(user)
     setFormIsClose(false)
   }
 
   const handleDelete= () =>{
-    deleteUserById(user.id)
+    setDeleteTodo(user)
     setDeleteUser(false)
   }
 

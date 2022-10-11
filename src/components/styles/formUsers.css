@@ -1,8 +1,8 @@
 .form {
-    background-color: white;
+    background-color: rgba(128, 25, 25, 0.849);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px #0004;
+    box-shadow: 0 0 10px #0008;
     position: relative;
     width: 100%;
     max-width: 270px;
@@ -26,24 +26,26 @@
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 20px;
+    text-align: center;
+    color: rgb(235, 225, 225);
 }
 .form__div {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 18px ;
+    margin-bottom: 19px ;
 }
 .form__label {
     font-size: 14px;
     font-weight: 700;
-    color: #000A;
+    color: rgb(235, 228, 228);
 }
 .form__input {
     font-family: inherit;
     padding: 6px 15px;
-    background-color: #F9FAFC;
+    background-color: #f9fafcaf;
     border: 1px solid #cccc;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: 300;
     font-size: 18px;
     color: black;
